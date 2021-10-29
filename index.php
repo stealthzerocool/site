@@ -17,7 +17,7 @@
         <h5>Username</h5>
         <input type="text" name="username" placeholder="User Name"><br>
         <h5>Password</h5>
-        <input type="text" name="pword" placeholder="Password"><br><br>
+        <input type="password" name="pword" placeholder="Password"><br><br>
         <button type="button">Login</button>
         
         <!---

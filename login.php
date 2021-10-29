@@ -22,14 +22,14 @@
         exit();
     }
 
-    $sql = "SELECT FROM users WHERE username= '$uname' AND password ='$pass'"
+    $sql = "SELECT * FROM users WHERE username= '$uname' AND password ='$pass'"
     $result = mysqli query(Sconn, Ssql);
 
     if(mysqli num_rows ($result)==1) {
         $row mysqli->fetch_assoc($result); 
         if($row['username'] == $uname && $row['password'] $pass) {
             echo "Logged In"; 
-            $_SESSION['user_name'] =$row['user_name'];
+            $_SESSION['username'] =$row['username'];
             $_SESSION[ 'name'] = $row[ 'name']; 
             $_SESSION['id'] = $row['id'];
             header("Location: dashboard.php");
@@ -42,7 +42,8 @@
     }
     
     }
-    else{}
+    else{
     header("Location: index.php");    
+    }
     exit();
     }
