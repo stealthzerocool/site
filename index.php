@@ -7,9 +7,18 @@
     <title>Login</title>
 </head>
 <body>
-    <h2>Test</h2>
-    <a href ="login.html"> Login</a> 
-    <form>
+    <h2>Login</h2>
+    <!--<a href ="login.php"> Login</a> 
+    !-->
+    <form action="login.php" method ="post">
+    <?php if(isset($_GET['error'])){?>
+    <p class="error"> <?php echo $_GET['error']; ?></p>
+    <?php } ?>
+        <h5>Username</h5>
+        <input type="text" name="username" placeholder="User Name"><br>
+        <h5>Password</h5>
+        <input type="text" name="pword" placeholder="Password"><br><br>
+        <button type="button">Login</button>
         
         <!---
         <input type="text">
