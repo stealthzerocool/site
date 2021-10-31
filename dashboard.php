@@ -1,9 +1,21 @@
+<?php 
+session_start();
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+?>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>logged in</title>
-    </head> 
-    <body>
-        <h5>Hai</h5>
-
-    </body>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+     <h1>Hello, <?php echo $_SESSION['user_name']; ?></h1>
+     <a href="logout.php">Logout</a>
+</body>
 </html>
+<?php 
+
+}else{
+     header("Location: index.php");
+     exit();
+}
+?>
