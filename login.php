@@ -7,13 +7,14 @@
         $data = trim($data); 
         $data= stripslashes ($data);
         $data = htmlspecialchars ($data);
-        return data;
+        return $data;
         }
     }
     $uname =validate($_POST['uname']); 
     $pass =validate($_POST['password']);
 
     if (empty($uname)) {
+        //echo"uname error";
         header ("Location: index.php?error=User Name is required");
         exit();
     }
@@ -22,28 +23,27 @@
         exit();
     }
 
-    $sql = "SELECT * FROM users WHERE username= '$uname' AND password ='$pass'"
-    $result = mysqli query(Sconn, Ssql);
+    $sql = "SELECT * FROM users WHERE user_name = '$uname' AND password ='$pass'";
+    $result = mysqli_query($conn, $sql);
 
-    if(mysqli num_rows ($result)==1) {
-        $row mysqli->fetch_assoc($result); 
-        if($row['username'] == $uname && $row['password'] $pass) {
+    if(mysqli_num_rows ($result)==1){
+        $row = mysqli_fetch_assoc($result); 
+        if($row['user_name'] === $uname && $row['password'] === $pass) {
             echo "Logged In"; 
-            $_SESSION['username'] =$row['username'];
-            $_SESSION[ 'name'] = $row[ 'name']; 
+            $_SESSION['user_name'] =$row['user_name'];
+            $_SESSION['name'] = $row['name']; 
             $_SESSION['id'] = $row['id'];
-            header("Location: dashboard.php");
+            header("Location:dashboard.php");
             exit();
     
-    } 
-    else{
-    header("Location: index.php?error-Incorrect User Name or Password"); 
-    exit();
-    }
+        } 
+        else{
+            header("Location: index.php?error=Incorrect User Name or Password");
+            exit();
+        }
     
     }
     else{
-    header("Location: index.php");    
-    }
-    exit();
+        header("Location: index.php?error=Incorrect User Name or Password");    
+        exit();
     }
