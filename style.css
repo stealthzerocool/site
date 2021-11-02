@@ -2,3 +2,7 @@
     background-color: rgb(39, 38, 38);
     overflow: hidden;
   }
+.topnav #mylinks{
+  display: none;
+  color: aliceblue;
+}
