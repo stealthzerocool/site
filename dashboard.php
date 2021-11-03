@@ -50,7 +50,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 	<tbody>
   <tr></tr>
 	<tr>
-		<th><p>sdfasdf asdfa sdf asdf</p></th>
+		<th><p>Friend list</p></th>
 		<td> </td>
 	</tr>
 	</tbody>
