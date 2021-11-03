@@ -3,11 +3,11 @@
     include "dbconnection.php";
 
     if(isset ($_POST['uname']) && isset($_POST['password'])) {
-        function validate($data) {
-        $data = trim($data); 
-        $data= stripslashes ($data);
-        $data = htmlspecialchars ($data);
-        return $data;
+        function validate($x) {
+        $x = trim($x); 
+        $x= stripslashes ($x);
+        $x = htmlspecialchars ($x);
+        return $x;
         }
     }
     $uname =validate($_POST['uname']); 
