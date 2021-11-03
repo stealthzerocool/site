@@ -5,16 +5,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile</title>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="topnav">
 <a href="logout.php">Logout</a>
-<a href="profile.php">Profile</a>
-
-<a class="Menu" href="home">Home</a>
-<!-- <a href="explore.php">Explore</a>
+<a href="account.php">Account</a>
+<a href="dashboard.php">Home</a>
+<!--
+<a class="Menu" href="dashboard.php">Home</a>
+<a href="explore.php">Explore</a>
 !-->
 
 
@@ -42,7 +43,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 	<thead>
 	<tr>
 		<th><h3>Friends</h3></th>
-		<th>Feed</th>
+		<th><h3>Feed</h3></th>
 	</tr>
 	</thead>
   
@@ -50,11 +51,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   <tr></tr>
 	<tr>
 		<th><p>sdfasdf asdfa sdf asdf</p></th>
-		<td>98 ui</td>
-	</tr>
-	<tr>
-		<th>Oranges</th>
-		<td>295 ui</td>
+		<td> </td>
 	</tr>
 	</tbody>
 </table>
