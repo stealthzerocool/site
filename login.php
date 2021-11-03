@@ -5,8 +5,8 @@
     if(isset ($_POST['uname']) && isset($_POST['password'])) {
         function validate($data) {
         $data = trim($data); 
-        $data= stripslashes ($data);
-        $data = htmlspecialchars ($data);
+        $data= stripslash ($data);
+        $data = htmlspecialchar ($data);
         return $data;
         }
     }
