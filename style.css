@@ -2,7 +2,76 @@
     background-color: rgb(39, 38, 38);
     overflow: hidden;
   }
-.topnav #mylinks{
-  display: none;
-  color: aliceblue;
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffffff;
+  color: white;
+}
+  
+.login_pg {
+  text-align: left;
+  padding-left: 100px;
+  width: 500px;
+  padding: 10% 0 0;
+  margin:0px;
+
+}
+.col2{
+  padding-left: 100px;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #48c9b0;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);}
+
+.column{
+  float: left;
+  width: 50%;
+}
+.head_a{
+  text-align: right;
+  padding-right: 100px;
+  padding-top: 40px;
+  
+
+}
+
+.button1 {
+  background-color: #000000;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin:  3px;
+  cursor: pointer;
+}
+.hi1{
+  text-align: center;
+}
+#col_left{
+  column-width: 30%;
+}
+#col_right{
+  column-width: -200px;
 }
