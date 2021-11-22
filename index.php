@@ -11,7 +11,7 @@
     <div class="row">
     <div class="column" >
         <div class="head_a">
-            <h1>Welcome</h1>
+            <h1>Welcome </h1>
         </div>
     </div>
     <div class="column">
