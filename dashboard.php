@@ -7,6 +7,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <head>
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 <div class="topnav">
@@ -59,7 +60,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <div class="container">
 
         <div class="leftpane"><h3 style="font-family: sans-serif;">People You may know</h3>
-
+		<table>
+			<tr>
+				<th>userss</th>
+			</tr>
+				<?php
+				$conn =mysqli_connect("localhost","root","","test");
+				if($conn->connect_error){
+					die("connection failed".$conn->connect_error);
+				}
+				$query = $conn->query("SELECT `user_name` FROM `users`;");
+				$array = Array();
+				
+				while($result = $query->fetch_assoc()){
+    				$array[] = $result['user_names'];
+				}
+				print_r($array);
+				//$result = $conn->query($sql);
+				?>
+		</table>
 		</div>
 			
         <div class="middlepane"><h3 style="font-family: sans-serif;"> Test Page</h3>

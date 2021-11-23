@@ -143,8 +143,7 @@ body{
   height: available;
   min-height: 400px;
   float: left;
-  background-color: rosybrown;
-  border-collapse: collapse;
+  background-color:rgb(255, 255, 255);
 }
 
 .middlepane{
@@ -153,7 +152,15 @@ body{
  height: available;
  min-height: 650px;
  float: left;
- background-color: royalblue;
+ background-color: rgb(255, 255, 255);
  border-collapse: collapse;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #588c7e;
+  font-family: monospace;
+  font-size: 25px;
+  text-align: left;
+} 
