@@ -81,7 +81,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		</table>
 		</div>
 			
-        <div class="middlepane"><h3 style="font-family: sans-serif;"> Test Page</h3>
+        <div class="middlepane"><h3 style="font-family: sans-serif;"> NewsFeed</h3>
 	
 		</div>
 
