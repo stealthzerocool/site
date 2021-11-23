@@ -65,46 +65,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 <div class="container">
 
-        <div class="leftpane"><h3 style="font-family: sans-serif;">People You may know</h3>
+        <div class="leftpane"><h4 style="font-family: sans-serif;">People you may know</h4>
 		<table>
 			<tr>
 				<th>userss</th>
 			</tr>
 				<?php
-				$connection = mysqli_connect("localhost", "root", "");
-				$db = mysqli_select_db("test", $connection);
-				$query = mysqli_query("select * from users", $connection);
-				while ($row = mysqli_fetch_array($query)) {
-				//echo "<b><a href="index.php?id={$row['id']}">{$row['user_name']}</a></b>";
-				echo "<br />";
-				}
-				?>
-				</div>
-				<?php
-if (isset($_GET['id'])) {
-$id = $_GET['id'];
-$query1 = mysqli_query("select * from employee where employee_id=$id", $connection);
-while ($row1 = mysqli_fetch_array($query1)) {
-?>
-<div class="form">
-<h2>---Details---</h2>
-<span>Name:</span> <?php echo $row1['employee_name']; ?>
 
-</div>
-<?php
-}
-}
-?>
-<div class="clear"></div>
-</div>
-<div class="clear"></div>
-</div>
-</div>
-<?php
-mysqli_close($connection); // Closing Connection with Server
-?>
-</body>
-</html>
+		
+
 
 				//$result = $conn->query($sql);
 				//927181bcd7f9410c90d5733c13fb53c8
@@ -112,7 +81,7 @@ mysqli_close($connection); // Closing Connection with Server
 		</table>
 		</div>
 			
-        <div class="middlepane"><h3 style="font-family: sans-serif;"> NewsFeed</h3>
+        <div class="middlepane"><h4 style="font-family: sans-serif;"> NewsFeed</h4>
 	
 		</div>
 

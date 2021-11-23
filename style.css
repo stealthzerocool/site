@@ -132,7 +132,7 @@ body{
 
 .leftpane{
   width: 25%;
-  min-width: 350px;
+  min-width: 250px;
   height: available;
   min-height: 400px;
   float: left;
@@ -158,7 +158,3 @@ table {
   text-align: left;
 } 
 
-input:invalid {
-  border: 2px dashed red;
-  box-shadow: 0 0 5px 1px red;
-}
