@@ -10,19 +10,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 <div class="topnav">
-<a href="logout.php">Logout</a>
-<a href="account.php">Account</a>
-<a href="dashboard.php">Home</a>
+<a href="logout.php" style="font-family:sans-serif">Logout </a>
+<a href="account.php" style="font-family:sans-serif">Account</a>
+<a href="dashboard.php" style="font-family:sans-serif">Home</a>
 <!--
 <a class="Menu" href="dashboard.php">Home</a>
 <a href="explore.php">Explore</a>
 !-->
+<br>
 
 
-
-</div class="hi1" >
-
-  <h2>Hello, <?php echo $_SESSION['user_name']; ?></h2>
+  <h2 style="color: #ffffff"> Hello, <?php echo $_SESSION['user_name']; ?></h2>
 </div>
 <!--
 <div class=row>
@@ -36,7 +34,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   </div>
 
 </div>
-!-->
+
 <table width="90%">
 	<col style="width:10%">
 	<col style="width:70%">
@@ -55,8 +53,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 	</tr>
 	</tbody>
 </table>
+!-->
+<br>
+
+<div class="container">
+
+        <div class="leftpane"><h3 style="font-family: sans-serif;">People You may know</h3>
+
+		</div>
+			
+        <div class="middlepane"><h3 style="font-family: sans-serif;"> Test Page</h3>
+	
+		</div>
+
+</div>
 </body>
 </html>
+
 <?php 
 
 }else{
