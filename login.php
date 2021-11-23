@@ -15,10 +15,12 @@
 
     if (empty($uname)) {
         //echo"uname error";
+        echo"<br/>";
         header ("Location: index.php?error=User Name is required");
         exit();
     }
     else if(empty($pass)) {
+        
         header("Location: index.php?error=Password is required"); 
         exit();
     }

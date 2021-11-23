@@ -22,6 +22,7 @@
         <div class="login_pg">
         <h2>Sign in</h2>
         <form action="login.php" method ="post">
+        <br>
         <?php if(isset($_GET['error'])){?>
         <p class="error"> <?php echo $_GET['error']; ?></p>
         <?php } ?>

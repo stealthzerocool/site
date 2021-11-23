@@ -7,7 +7,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <head>
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		h2 {
+			text-transform: capitalize;
+		}
+	</style>
 
+		
 </head>
 <body>
 <div class="topnav">
@@ -20,8 +26,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 !-->
 <br>
 
-
   <h2 style="color: #ffffff"> Hello, <?php echo $_SESSION['user_name']; ?></h2>
+
 </div>
 <!--
 <div class=row>
@@ -65,18 +71,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 				<th>userss</th>
 			</tr>
 				<?php
-				$conn =mysqli_connect("localhost","root","","test");
-				if($conn->connect_error){
-					die("connection failed".$conn->connect_error);
-				}
-				$query = $conn->query("SELECT `user_name` FROM `users`;");
-				$array = Array();
 				
-				while($result = $query->fetch_assoc()){
-    				$array[] = $result['user_names'];
-				}
-				print_r($array);
 				//$result = $conn->query($sql);
+				//927181bcd7f9410c90d5733c13fb53c8
 				?>
 		</table>
 		</div>
