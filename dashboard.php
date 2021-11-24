@@ -87,10 +87,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 				<div class="card">
 					<div class="container">
 						<?php
-							$selectquery="select 'user_name' from users";
+							$selectquery="select * from users";
 							$query = mysqli_query($conn,$selectquery);
-							$res = mysqli_fetch_array($query);
-							echo $res[1];
+							//$nums = mysqli_num_rows($query);
+							
+							while($res = mysqli_fetch_array($query)){
+								echo $res['user_name']."<br><br>";
+							}
+							//echo $res[1];
 						?>
 					</div>
 				</div>
