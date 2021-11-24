@@ -82,6 +82,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <div class="container">
 
         <div class="leftpane"><h4 style="font-family: sans-serif;">People you may know</h4>
+		<div><br></div>
 		<table>
 			<tr>
 				<div class="card">
@@ -92,7 +93,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 							//$nums = mysqli_num_rows($query);
 							
 							while($res = mysqli_fetch_array($query)){
-								echo $res['user_name']."<br><br>";
+								//echo "<div class ='card'">
+								print $res['user_name']."<button class='button button1'>Add</button><br><br>";
+								//echo "</div>"
 							}
 							//echo $res[1];
 						?>

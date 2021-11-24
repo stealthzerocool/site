@@ -15,7 +15,7 @@
 
     if (empty($uname)) {
         //echo"uname error";
-        echo"<br/>";
+        
         header ("Location: index.php?error=User Name is required");
         exit();
     }
