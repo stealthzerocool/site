@@ -1,4 +1,5 @@
 <?php 
+include 'dbconnection.php';
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 ?>
@@ -6,10 +7,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <html>
 <head>
     <title>Home</title>
+	
     <link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		h2 {
 			text-transform: capitalize;
+		}
+		.card{
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
+		transition: 0.3s;
+		width: 70%;
+		border: 20px;
+		border-color: black;
+		border-radius: 10px;
+		}
+		.card:hover{
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		.container{
+		padding: 2px 16px;
 		}
 	</style>
 
@@ -68,7 +84,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="leftpane"><h4 style="font-family: sans-serif;">People you may know</h4>
 		<table>
 			<tr>
-				<th>userss</th>
+				<div class="card">
+					<div class="container">
+						<?php
+							$selectquery="select 'user_name' from users";
+							$query = mysqli_query($conn,$selectquery);
+							$res = mysqli_fetch_array($query);
+							echo $res[1];
+						?>
+					</div>
+				</div>
 			</tr>
 				<?php
 
@@ -82,7 +107,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		</div>
 			
         <div class="middlepane"><h4 style="font-family: sans-serif;"> NewsFeed</h4>
-	
+		<br>	
+		<div class="card">
+				<div class="container">
+					
+					<h4>Heading1</h4>
+					
+				</div>
+
+			</div>
 		</div>
 
 </div>
