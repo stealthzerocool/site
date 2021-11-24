@@ -2,6 +2,7 @@
 include 'dbconnection.php';
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+	$uss=$_SESSION['user_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,6 +12,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <link rel="stylesheet" type="text/css" href="style.css">
 	<style>
 		h2 {
+			text-transform: capitalize;
+		}
+		.container {
 			text-transform: capitalize;
 		}
 		.card{
@@ -91,13 +95,29 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 							$selectquery="select * from users";
 							$query = mysqli_query($conn,$selectquery);
 							//$nums = mysqli_num_rows($query);
+							//$res = mysqli_fetch_array($query);
+							//foreach (array_keys($res,$uss , true) as $key) {
+							//	unset($res[$key]);
+							//	}
+							//	print_r($res);
 							
+							
+							//foreach($res as $val){
+							//	print $val."<button class='button button1'>Add</button><br><br>";
+							//}
 							while($res = mysqli_fetch_array($query)){
-								//echo "<div class ='card'">
+								//echo "<div class ='card'">;
+								if($res['user_name']==$uss){
+									continue;
+								}
+								else{
 								print $res['user_name']."<button class='button button1'>Add</button><br><br>";
-								//echo "</div>"
-							}
-							//echo $res[1];
+								//echo "</div>";
+								//$nums=$nums-1;
+									}
+							}	
+							//echo $res[1]; 
+							//	
 						?>
 					</div>
 				</div>
