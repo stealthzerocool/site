@@ -15,6 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 			text-transform: capitalize;
 		}
 		.container {
+			font-family: sans-serif;
 			text-transform: capitalize;
 		}
 		.card{
@@ -111,7 +112,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 									continue;
 								}
 								else{
-								print $res['user_name']."<button class='button button1'>Add</button><br><br>";
+								print $res['user_name']."&nbsp"."<button class='button button1'>Add</button><br><br>";
 								//echo "</div>";
 								//$nums=$nums-1;
 									}
