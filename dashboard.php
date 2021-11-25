@@ -28,7 +28,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		border-radius: 10px;
 		}
 		.card2{
-		font-family: Arial;
+		font-family: sans-serif;
+		font-size: 5;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
 		transition: 0.3s;
 		width: 70%;
@@ -170,12 +171,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		</div>
 			
         <div class="middlepane"><h4 style="font-family: sans-serif;"> NewsFeed</h4>
+		<br>
+		<input id="input" type="text" placeholder="Search"></input>
 		<br>	
+		
 		<div class="card">
 				<div class="container">
 				
 				</div>
-				<div class="news-container">
+				<div class="container">
 					<script>
 						makeGETRequest();
 					</script>
