@@ -173,6 +173,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <div class="middlepane"><h4 style="font-family: sans-serif;"> NewsFeed</h4>
 		<br>
 		<input id="input" type="text" placeholder="Search"></input>
+		
 		<br>	
 		
 		<div class="card">
