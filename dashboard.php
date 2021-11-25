@@ -19,6 +19,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 			text-transform: capitalize;
 		}
 		.card{
+		font-family: sans-serif;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
+		transition: 0.3s;
+		width: 70%;
+		border: 20px;
+		border-color: black;
+		border-radius: 10px;
+		}
+		.card2{
+		font-family: Arial;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
 		transition: 0.3s;
 		width: 70%;
@@ -30,13 +40,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 		}
 		.container{
+		font-family: sans-serif;
 		padding: 2px 16px;
+		
+		}
+		img{
+			border-radius: 5%;
 		}
 	</style>
 			
 </head>
 <body>
-
 <script>
         function makeGETRequest() {
             const url = "https://newsapi.org/v2/everything?q=tech&from=2021-10-25&sortBy=latest"
@@ -50,7 +64,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 .then(response => response.json())
 				.then(response => {
 					for(var i=0; i<response.articles.length; i++){
-						document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float-left; width:150px;' src='"+response.articles[i].urlToImage+"' <h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+						"<div class='card2'"
+						document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+						"</div>"
 					}
 				})
                 .then(data => console.log(data))
@@ -157,8 +173,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		<br>	
 		<div class="card">
 				<div class="container">
-					
-					<h4>Heading1</h4>
 				
 				</div>
 				<div class="news-container">
