@@ -33,23 +33,31 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		padding: 2px 16px;
 		}
 	</style>
-	<script src="script.js"></script>
-	<script>
-		function getnews(){
-			fetch('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=927181bcd7f9410c90d5733c13fb53c8',{headers:new Headers({"X-Requested-With":"sssdfsdfs"})})
-			.then(a => a.json())
-			.then(response => {
-				for(var i=0; i<response.article.length;i++){
-					document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left; width: 150px;'
-					src='"+response.article[i].urlToImage+"'><h1>"+response.articles[i].title+"</h1>'"+response.articles[i].source.name+"'<br>"+response.articles[i].description+"<a href="+response.articles[i].url+"target='blank'>"+response.articles[i].url+"</a></div>";
-				}
-			})
 			
-		}
-	</script>
-		
 </head>
 <body>
+
+<script>
+        function makeGETRequest() {
+            const url = "https://newsapi.org/v2/everything?q=tech&from=2021-10-25&sortBy=latest"
+            const options = {
+                method: 'GET',
+                headers: {
+                    "X-Api-Key": "927181bcd7f9410c90d5733c13fb53c8"
+                },
+			}
+            fetch(url, options)
+                .then(response => response.json())
+				.then(response => {
+					for(var i=0; i<response.articles.length; i++){
+						document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float-left; width:150px;' src='"+response.articles[i].urlToImage+"' <h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+					}
+				})
+                .then(data => console.log(data))
+                .catch(e => console.error(e))
+				
+        	}
+    </script>
 <div class="topnav">
 <a href="logout.php" style="font-family:sans-serif">Logout </a>
 <a href="account.php" style="font-family:sans-serif">Account</a>
@@ -114,8 +122,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 							//	unset($res[$key]);
 							//	}
 							//	print_r($res);
-							
-							
 							//foreach($res as $val){
 							//	print $val."<button class='button button1'>Add</button><br><br>";
 							//}
@@ -153,12 +159,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 				<div class="container">
 					
 					<h4>Heading1</h4>
-					getnews();
-					
+				
 				</div>
 				<div class="news-container">
-					<p class="news"></p>
-					<p class="news_title"></p>
+					<script>
+						makeGETRequest();
+					</script>
+					<!--
+					<button type="submit" onclick="makeGETRequest()">Get news</button>
+					!-->
+					<div id="output"></div>
 				</div>
 
 			</div>

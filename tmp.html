@@ -1,105 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+.then(response => {
+    for(var i=0; i<response.articles.length; i++){
+        document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left; width: 150px;'
+        src='"+response.articles[i].urlToImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+    }
+})
 
-    <!--<a href ="login.php">Login</a> 
-    !-->
-    <div class="row">
-    <div class="column" >
-        <div class="head_a">
-            <h1>Welcome </h1>
-        </div>
-    </div>
-    <div class="column">
-        <div class="col2">
-        <div class="login_pg">
-        <h2>Login</h2>
-        <form action="login.php" method ="post">
-        <?php if(isset($_GET['error'])){?>
-        <p class="error"> <?php echo $_GET['error']; ?></p>
-        <?php } ?>
-            <!-- <label>Username</label><br>
-            !-->
-            <input type="text" name="uname" placeholder="User Name"><br><br>
 
-            <!--
-            <label>Password</label><br>
-            !-->
-            <input type="password" name="password" placeholder="Password"><br><br>
-            
-            <button class="button1" type="submit">Login</button>
-            
-            <!---
-            <input type="text">
-            <input type="submit">
-            --->
-        
-        </form>   
-    </div>
-        </div>
-</div> 
-</body>
-</html>
+dashbrd
+fetch 
+https://cors-anywhere.herokuapp.com/
+
+{headers:new Headers({"X-Requested-With":"sssdfsdfs"})}
+
+
+http://newsapi.org/v2/top-headlines?country=us
 
 
 
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Read Data From Database Using PHP - Demo Preview</title>
-<meta content="noindex, nofollow" name="robots">
-<link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div class="maindiv">
-<div class="divA">
-<div class="title">
-<h2>Read Data Using PHP</h2>
-</div>
-<div class="divB">
-<div class="divD">
-<p>Click On Menu</p>
-<?php
-$connection = mysql_connect("localhost", "root", ""); // Establishing Connection with Server
-$db = mysql_select_db("company", $connection); // Selecting Database
-//MySQL Query to read data
-$query = mysql_query("select * from employee", $connection);
-while ($row = mysql_fetch_array($query)) {
-echo "<b><a href="readphp.php?id={$row['employee_id']}">{$row['employee_name']}</a></b>";
-echo "<br />";
-}
-?>
-</div>
-<?php
-if (isset($_GET['id'])) {
-$id = $_GET['id'];
-$query1 = mysql_query("select * from employee where employee_id=$id", $connection);
-while ($row1 = mysql_fetch_array($query1)) {
-?>
-<div class="form">
-<h2>---Details---</h2>
-<!-- Displaying Data Read From Database -->
-<span>Name:</span> <?php echo $row1['employee_name']; ?>
-<span>E-mail:</span> <?php echo $row1['employee_email']; ?>
-<span>Contact No:</span> <?php echo $row1['employee_contact']; ?>
-<span>Address:</span> <?php echo $row1['employee_address']; ?>
-</div>
-<?php
-}
-}
-?>
-<div class="clear"></div>
-</div>
-<div class="clear"></div>
-</div>
-</div>
-<?php
-mysql_close($connection); // Closing Connection with Server
-?>
-</body>
-</html>
+<script>
+    function getnews(){
+        console.log('err');
+        fetch('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=927181bcd7f9410c90d5733c13fb53c8',{headers:new Headers({"X-Requested-With":"sssdfsdfs"})})
+        .then(a => a.json())
+        .then(response => {
+        for(var i=0; i<response.articles.length; i++){
+            document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left; width: 150px;'
+            src='"+response.articles[i].urlToImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+        }
+    }	
+    }
+</script>
