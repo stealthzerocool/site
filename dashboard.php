@@ -20,9 +20,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		}
 		.card{
 		font-family: sans-serif;
+		
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
 		transition: 0.3s;
-		width: 70%;
+		width: 55%;
 		border: 20px;
 		border-color: black;
 		border-radius: 10px;
@@ -32,7 +33,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		font-size: 5;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2 );
 		transition: 0.3s;
-		width: 70%;
+		width: 60%;
 		border: 20px;
 		border-color: black;
 		border-radius: 10px;
@@ -41,6 +42,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 		}
 		.container{
+		font-family: sans-serif;
+		padding: 2px 16px;
+		
+		}
+		.container2{
 		font-family: sans-serif;
 		padding: 2px 16px;
 		
@@ -58,7 +64,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             const options = {
                 method: 'GET',
                 headers: {
-                    "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f"
+                    "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f",
+					
                 },
 			}
             fetch(url, options)
@@ -84,8 +91,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <a href="explore.php">Explore</a>
 !-->
 <br>
-
-  <h2 style="color: #ffffff"> Hello, <?php echo $_SESSION['user_name']; ?></h2>
+&nbsp;
+  <h2 style="color: #ffffff">Hello, <?php echo $_SESSION['user_name']; ?></h2>
 
 </div>
 <!--
@@ -176,11 +183,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		
 		<br>	
 		
-		<div class="card">
-				<div class="container">
+		<div class="card2">
+				<div class="container2">
 				
 				</div>
-				<div class="container">
+				<div class="container2">
 					<script>
 						makeGETRequest();
 					</script>
