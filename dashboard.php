@@ -60,7 +60,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <body>
 <script>
         function makeGETRequest() {
-            const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-26&sortBy=latest&apiKey=034ea1cdee72495d9f3aab7aa212570f"
+            const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-26&sortBy=priority"
             const options = {
                 method: 'GET',
                 headers: {
@@ -167,10 +167,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 				</div>
 			</tr>
 				<?php
-
-		
-
-
 				//$result = $conn->query($sql);
 				//https://newsapi.org/v2/everything?q=Apple&from=2021-11-25&sortBy=popularity&apiKey=927181bcd7f9410c90d5733c13fb53c8
 				?>
@@ -179,6 +175,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 			
         <div class="middlepane"><h4 style="font-family: sans-serif;"> NewsFeed</h4>
 		<br>
+		<!--
+		</div><form action=""></form></div>
+		!-->
 		<input id="input" type="text" placeholder="Search"></input>
 		
 		<br>	
