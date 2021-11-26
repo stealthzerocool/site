@@ -1,5 +1,83 @@
 https://networklessons.com/cisco/ccnp-switch/vlan-hopping
 
+https://newsapi.org/v2/everything?qInTitle=technology&from=us&language=en&apiKey=927181bcd7f9410c90d5733c13fb53c8
+
+https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?qInTitle=technology&from=us&language=en&apiKey=927181bcd7f9410c90d5733c13fb53c8
+
+js dashboard
+
+working scripts
+
+<script>
+    function makeGETRequest() {
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+        const qInTitle = "technology";
+        const from = "us";
+        const apiKey = "927181bcd7f9410c90d5733c13fb53c8";
+        const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&from=${from}&language=en&apiKey=${apiKey}`;
+        const request = new Request(url);
+
+        
+        
+        const options = {
+            method: 'GET',
+            headers: {
+                    "x-requested-with": "asdfasdfdddd"
+                
+            },
+        }
+
+        fetch(request,options)
+            .then(response => response.json())
+            .then((news)=> {
+                console.log(news);
+            })
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
+
+
+
+2)
+
+<script>
+    function makeGETRequest() {
+        const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-25&sortBy=latest&apiKey=927181bcd7f9410c90d5733c13fb53c8"
+        
+        const options = {
+        method: 'GET',
+        headers: {
+                   "x-api-key": "927181bcd7f9410c90d5733c13fb53c8"
+        },
+}
+        fetch(url, options)
+            .then(response => response.json())
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
+
+
+
+
+
 
 
 .then(response => {

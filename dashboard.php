@@ -54,11 +54,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <body>
 <script>
         function makeGETRequest() {
-            const url = "https://newsapi.org/v2/everything?q=tech&from=2021-10-25&sortBy=latest"
+            const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-26&sortBy=latest&apiKey=034ea1cdee72495d9f3aab7aa212570f"
             const options = {
                 method: 'GET',
                 headers: {
-                    "X-Api-Key": "927181bcd7f9410c90d5733c13fb53c8"
+                    "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f"
                 },
 			}
             fetch(url, options)
