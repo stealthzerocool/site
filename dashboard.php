@@ -10,6 +10,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
     <title>Home</title>
 	
     <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		h2 {
 			text-transform: capitalize;
@@ -59,16 +60,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 <script>
+		function hai(){
+			alert("hai");
+		}
         function makeGETRequest() {
-            const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-26&sortBy=priority"
-            const options = {
-                method: 'GET',
-                headers: {
-                    "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f",
-					
-                },
-			}
-            fetch(url, options)
+			const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+			
+			var a = document.getElementById('search1')
+            const url = `${proxyUrl}https://newsapi.org/v2/everything?q=technology&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
+			const options = {
+            
+            headers: {
+
+                "X-Requested-With": "XMLHttpRequest"
+            }}
+			const request=new Request(url,options);
+			
+            fetch(request)
                 .then(response => response.json())
 				.then(response => {
 					for(var i=0; i<response.articles.length; i++){
@@ -178,8 +186,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		<!--
 		</div><form action=""></form></div>
 		!-->
-		<input id="input" type="text" placeholder="Search"></input>
-		
+		<form>
+		<input id="search1" type="text" placeholder="Search"></input>
+		<button onclick="makeGETRequest()">Submit</button>
+		</form>
 		<br>	
 		
 		<div class="card2">

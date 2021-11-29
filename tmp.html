@@ -77,7 +77,35 @@ working scripts
         }
 </script>
 
+ 3)workin nov 29
 
+ <script>
+    function makeGETRequest() {
+        
+        const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-30&sortBy=priority"
+        const options = {
+            method: 'GET',
+            headers: {
+                "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f",
+                "Access-Control-Allow-Origin": "*",
+                
+                "Access-Control-Allow-Headers" : "Content-Type, Authorization"
+            },
+        }
+        fetch(url, options)
+            .then(response => response.json())
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    "<div class='card2'"
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    "</div>"
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
 
 
 "Access-Control-Allow-Headers":"*",
