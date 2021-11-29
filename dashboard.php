@@ -60,19 +60,19 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 <script>
-		function hai(){
-			alert("hai");
+		function hai(a){
+			alert(a.value);
 		}
-        function makeGETRequest() {
+        function makeGETRequest(aa) {
 			const proxyUrl = "https://cors-anywhere.herokuapp.com/"
-			
-			var a = document.getElementById('search1')
-            const url = `${proxyUrl}https://newsapi.org/v2/everything?q=technology&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
+			//var aa = bb.value
+			//alert(aa)
+			//var a = document.getElementById('search1')
+            const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${aa}&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
 			const options = {
-            
+            //methood: 'GET',
             headers: {
-
-                "X-Requested-With": "XMLHttpRequest"
+				"X-Requested-With": "sssdfasdf"
             }}
 			const request=new Request(url,options);
 			
@@ -187,8 +187,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		</div><form action=""></form></div>
 		!-->
 		<form>
-		<input id="search1" type="text" placeholder="Search"></input>
-		<button onclick="makeGETRequest()">Submit</button>
+		<input id="search1" name="search2" type="text" placeholder="Search"></input>
+		<button onclick="makeGETRequest(search2.value)">Submit</button>
 		</form>
 		<br>	
 		
@@ -198,7 +198,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 				</div>
 				<div class="container2">
 					<script>
-						makeGETRequest();
+					
+						makeGETRequest("technology");
 					</script>
 					<!--
 					<button type="submit" onclick="makeGETRequest()">Get news</button>
