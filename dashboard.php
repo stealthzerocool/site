@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         function makeGETRequest(aa) {
 			const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 			//var aa = bb.value
-			//alert(aa)
+			alert(aa)
 			//var a = document.getElementById('search1')
             const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${aa}&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
 			const options = {
@@ -80,9 +80,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 .then(response => response.json())
 				.then(response => {
 					for(var i=0; i<response.articles.length; i++){
-						"<div class='card2'"
+						
 						document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
-						"</div>"
+						
 					}
 				})
                 .then(data => console.log(data))
@@ -99,7 +99,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <a href="explore.php">Explore</a>
 !-->
 <br>
-&nbsp;
   <h2 style="color: #ffffff">Hello, <?php echo $_SESSION['user_name']; ?></h2>
 
 </div>
@@ -186,20 +185,34 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		<!--
 		</div><form action=""></form></div>
 		!-->
+		<script>
+			var x="technology";
+		</script>
+		<div>
 		<form>
 		<input id="search1" name="search2" type="text" placeholder="Search"></input>
-		<button onclick="makeGETRequest(search2.value)">Submit</button>
+		<button onclick="searchFunc(search2.value)">Submit</button>
 		</form>
+		</div>
 		<br>	
-		
+
+		<script>
+			
+			function searchFunc(srchfunc){
+				var x=srchfunc;
+				alert (srchfunc);
+			}
+			
+		</script>
 		<div class="card2">
 				<div class="container2">
-				
 				</div>
-				<div class="container2">
+				<div class="container2">	
 					<script>
-					
-						makeGETRequest("technology");
+						//var b = getElementById("");
+						//alert (b);
+						makeGETRequest(x);
+						
 					</script>
 					<!--
 					<button type="submit" onclick="makeGETRequest()">Get news</button>
