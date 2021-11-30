@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         function makeGETRequest(aa) {
 			const proxyUrl = "https://cors-anywhere.herokuapp.com/"
 			//var aa = bb.value
-			alert(aa)
+			//alert(aa)
 			//var a = document.getElementById('search1')
             const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${aa}&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
 			const options = {
@@ -76,6 +76,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             }}
 			const request=new Request(url,options);
 			
+			//https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=tech&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f
+
             fetch(request)
                 .then(response => response.json())
 				.then(response => {
@@ -186,31 +188,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		</div><form action=""></form></div>
 		!-->
 		<script>
-			var x="technology";
+			//x="technology";
 		</script>
 		<div>
 		<form>
 		<input id="search1" name="search2" type="text" placeholder="Search"></input>
-		<button onclick="searchFunc(search2.value)">Submit</button>
+		<button onclick="makeGETRequest(search2.value)">Submit</button>
+		<script>
+			let x= document.getElementById(search1)
+			alert(x)
+			</script>
+
 		</form>
 		</div>
+		
 		<br>	
 
-		<script>
-			
-			function searchFunc(srchfunc){
-				var x=srchfunc;
-				alert (srchfunc);
-			}
-			
-		</script>
+		
 		<div class="card2">
 				<div class="container2">
 				</div>
 				<div class="container2">	
 					<script>
 						//var b = getElementById("");
-						//alert (b);
+						//alert (x);
 						makeGETRequest(x);
 						
 					</script>
