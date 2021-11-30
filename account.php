@@ -1,4 +1,5 @@
 <?php 
+include 'dbconnection.php';
 session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 ?>
@@ -7,6 +8,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <head>
     <title>My Account</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 <div class="topnav">
@@ -14,9 +16,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <a href="account.php">Account</a>
 <a href="dashboard.php">Home</a>
 
-</div class="hi1" >
 
-  <h2>Edit Profile</h2>
+<br>
+
+  <h2 style="color: white;">Edit Profile</h2>
+</div>
+<div>
+  <br>
+<h3>Delete Account</h3>
+<form action="userdelete.php">
+<button type="submit "class="button2">Delete</button> 
+</form>
+
+
+
 </div>
 </body>
 </html>

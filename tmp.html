@@ -1,0 +1,151 @@
+https://networklessons.com/cisco/ccnp-switch/vlan-hopping
+
+https://newsapi.org/v2/everything?qInTitle=technology&from=us&language=en&apiKey=927181bcd7f9410c90d5733c13fb53c8
+
+https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?qInTitle=technology&from=us&language=en&apiKey=927181bcd7f9410c90d5733c13fb53c8
+
+js dashboard
+
+working scripts
+
+<script>
+    function makeGETRequest() {
+        const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+        const qInTitle = "technology";
+        const from = "us";
+        const apiKey = "927181bcd7f9410c90d5733c13fb53c8";
+        const url = `${proxyUrl}https://newsapi.org/v2/everything?qInTitle=${qInTitle}&from=${from}&language=en&apiKey=${apiKey}`;
+        const request = new Request(url);
+
+        
+        
+        const options = {
+            method: 'GET',
+            headers: {
+                    "x-requested-with": "asdfasdfdddd"
+                
+            },
+        }
+
+        fetch(request,options)
+            .then(response => response.json())
+            .then((news)=> {
+                console.log(news);
+            })
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
+
+
+
+2)
+
+<script>
+    function makeGETRequest() {
+        const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-25&sortBy=latest&apiKey=927181bcd7f9410c90d5733c13fb53c8"
+        
+        const options = {
+        method: 'GET',
+        headers: {
+                   "x-api-key": "927181bcd7f9410c90d5733c13fb53c8",
+                   "Access-Control-Allow-Credentials":"true",
+                   "Access-Contro-Allow-Origin":"*"
+
+        },
+}
+        fetch(url, options)
+            .then(response => response.json())
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
+
+ 3)workin nov 29
+
+ <script>
+    function makeGETRequest() {
+        
+        const url = "https://newsapi.org/v2/everything?q=technology&from=2021-10-30&sortBy=priority"
+        const options = {
+            method: 'GET',
+            headers: {
+                "X-Api-Key": "034ea1cdee72495d9f3aab7aa212570f",
+                "Access-Control-Allow-Origin": "*",
+                
+                "Access-Control-Allow-Headers" : "Content-Type, Authorization"
+            },
+        }
+        fetch(url, options)
+            .then(response => response.json())
+            .then(response => {
+                for(var i=0; i<response.articles.length; i++){
+                    "<div class='card2'"
+                    document.getElementById("output").innerHTML +="<div style='padding-top:20px;'><img style='float:right; width:150px;' src='"+response.articles[i].urlToImage+"'> <h3>"+response.articles[i].title+"</h3><br>"+response.articles[i].description+"<br> <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+                    "</div>"
+                }
+            })
+            .then(data => console.log(data))
+            .catch(e => console.error(e))
+            
+        }
+</script>
+
+
+"Access-Control-Allow-Headers":"*",
+					"Access-Control-Allow-Methods": "GET",
+  					"Access-Control-Allow-Headers":"Content-Type"
+
+
+
+
+
+
+.then(response => {
+    for(var i=0; i<response.articles.length; i++){
+        document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left; width: 150px;'
+        src='"+response.articles[i].urlToImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+    }
+})
+
+
+dashbrd
+fetch 
+https://cors-anywhere.herokuapp.com/
+
+{headers:new Headers({"X-Requested-With":"sssdfsdfs"})}
+
+
+http://newsapi.org/v2/top-headlines?country=us
+
+
+
+<script>
+    function getnews(){
+        console.log('err');
+        fetch('https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apikey=927181bcd7f9410c90d5733c13fb53c8',{headers:new Headers({"X-Requested-With":"sssdfsdfs"})})
+        .then(a => a.json())
+        .then(response => {
+        for(var i=0; i<response.articles.length; i++){
+            document.getElementById("output").innerHTML += "<div style='padding-top: 20px;'><img style='float:left; width: 150px;'
+            src='"+response.articles[i].urlToImage+"'><h1>"+response.articles[i].title+"</h1>"+response.articles[i].source.name+"<br>"+response.articles[i].description+" <a href='"+response.articles[i].url+"'target='_blank'>"+response.articles[i].url+"</a></div>";
+        }
+    }	
+    }
+</script>
