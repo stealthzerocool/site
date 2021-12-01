@@ -6,7 +6,6 @@
         function validate($x) {
         $x = trim($x); 
         $x = htmlspecialchars ($x);
-        $x= stripslashes ($x);
         return $x;
         }
     }
