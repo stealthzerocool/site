@@ -8,9 +8,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-    <!--<a href ="login.php">Login</a> 
-    !-->
     <div class="row">
     <div class="column" >
         <div class="head_a">
