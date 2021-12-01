@@ -15,8 +15,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <a href="logout.php">Logout</a>
 <a href="account.php">Account</a>
 <a href="dashboard.php">Home</a>
-
-
 <br>
 
   <h2 style="color: white;">Edit Profile</h2>

@@ -76,7 +76,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             }}
 			const request=new Request(url,options);
 			
-			//https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=tech&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f
+			//https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=tech&from=2021-11-2&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f
 
             fetch(request)
                 .then(response => response.json())
@@ -196,7 +196,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 		<button onclick="makeGETRequest(search2.value)">Submit</button>
 		<script>
 			let x= document.getElementById(search1)
-			alert(x)
+			//alert(x)
 			</script>
 
 		</form>

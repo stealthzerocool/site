@@ -43,7 +43,6 @@
             header("Location: index.php?error=Incorrect User Name or Password");
             exit();
         }
-    
     }
     else{
         header("Location: index.php?error=Incorrect User Name or Password");    
