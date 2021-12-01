@@ -25,7 +25,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
   <br>
 <h3>Delete Account</h3>
 <form action="userdelete.php">
-<button type="submit "class="button2">Delete</button> 
+<button type="submit" onclick="<script>alert('are you sure')</script>" class="button2">Delete</button> 
 </form>
 
 
