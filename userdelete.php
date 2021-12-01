@@ -8,7 +8,7 @@ $sqldel="DELETE FROM users WHERE user_name = '$id'";
 
 
 if ($conn->query($sqldel)===TRUE){
-    echo '<script>alert("Account Deleted Successfully")</script>';
+    echo "<script>alert('Account Deleted Successfully');</script>";
     header("Location:index.php");
 }
 else{

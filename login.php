@@ -4,6 +4,7 @@
 
     if(isset ($_POST['uname']) && isset($_POST['password'])) {
         function validate($x) {
+            echo("<script>alert($x)</script>");
         $x = trim($x); 
         $x = htmlspecialchars ($x);
         return $x;

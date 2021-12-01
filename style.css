@@ -21,7 +21,7 @@
 
 .topnav a.active {
   background-color: #ffffff;
-  color: white;
+  color: rgb(0, 255, 200);
 }
   
 .login_pg {
