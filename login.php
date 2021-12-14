@@ -4,14 +4,17 @@
 
     if(isset ($_POST['uname']) && isset($_POST['password'])) {
         function validate($x) {
-            echo("<script>alert($x)</script>");
-        $x = trim($x); 
-        $x = htmlspecialchars ($x);
+            //echo("<script>alert($x)</script>");
+        //$x = trim($x); 
+        //$x = htmlspecialchars ($x);
         return $x;
         }
     }
-    $uname =validate($_POST['uname']); 
-    $pass =validate($_POST['password']);
+    $uname =$_POST['uname']; 
+    $pass =$_POST['password'];
+
+    //$uname =validate($_POST['uname']); 
+    //$pass =validate($_POST['password']);
 
     if (empty($uname)) {
         //echo"uname error";
@@ -25,7 +28,10 @@
         exit();
     }
 
+                                                // us'or'1=1
+
     $sql = "SELECT * FROM users WHERE user_name = '$uname' AND password ='$pass'";
+    echo"<script>console.log($sql);</script>";
     $result = mysqli_query($conn, $sql);
 
     if(mysqli_num_rows ($result)==1){
