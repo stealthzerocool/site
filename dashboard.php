@@ -68,7 +68,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 			//var aa = bb.value
 			//alert(aa)
 			//var a = document.getElementById('search1')
-            const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${aa}&from=2021-11-1&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
+            const url = `${proxyUrl}https://newsapi.org/v2/everything?q=${aa}&from=2021-12-9&sortBy=priority&apiKey=034ea1cdee72495d9f3aab7aa212570f`
 			const options = {
             //methood: 'GET',
             headers: {
@@ -137,7 +137,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </table>
 !-->
 <br>
-
+<?php
+//echo"<script>console.log('hi');</script>";
+?>
 <div class="container">
 
         <div class="leftpane"><h4 style="font-family: sans-serif;">People you may know</h4>
@@ -172,6 +174,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 							//echo $res[1]; 
 							//	
 						?>
+					</div>
+				</div>
+			</tr>
+			<tr>
+				<div class="card">
+					<div class="container">
+						<h3
 					</div>
 				</div>
 			</tr>

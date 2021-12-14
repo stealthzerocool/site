@@ -30,7 +30,7 @@
             <input type="password" name="password" class="text" placeholder="Your password" />
         </div>
         <div class="hero-btn" type="submit">
-            <button>Log in</button>
+            <button>Log ssin</button>
         </div>
 
     </div>
