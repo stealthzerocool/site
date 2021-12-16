@@ -38,9 +38,17 @@
 
 //mysqli_num_rows ($result)==1
     if(true){
-        //$row = mysqli_fetch_assoc($result); 
-        $row = $result;
-        echo $row;
+        $row = mysqli_fetch_assoc($result); 
+        //$row = $result;
+        //echo $row;
+        if(true){
+            $_SESSION['user_name'] =$row['user_name'];
+            $_SESSION['name'] = $row['name']; 
+            $_SESSION['id'] = $row['id'];
+            //header("Location:dashboard.php");
+            exit();
+        }
+        /*
         if($row['user_name'] === $uname && $row['password'] === $pass) {
             echo "Logged In"; 
             echo $sql;
@@ -51,6 +59,7 @@
             exit();
     
         } 
+        */
         else{
             header("Location: index.php?error=Incorrect User Name or Password");
             exit();
