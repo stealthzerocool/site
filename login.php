@@ -35,11 +35,21 @@
     
     $result = mysqli_query($conn, $sql);
     
-    echo $sql;
-    exit();
+    //echo $sql;
+    //exit();
 //mysqli_num_rows ($result)==1
+
     if(true){
-        $row = mysqli_fetch_assoc($result); 
+        try {
+        //$row = mysqli_fetch_assoc($result); 
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        throw new Exception('error');
+        }
+        catch (Exception $e){
+            echo "something went wrong";
+        }
+        
+        //throw new Exception();
         //$row = $result;
         //echo $row;
         
@@ -52,24 +62,30 @@
         }
         */
         
-        if($row['user_name'] === $uname && $row['password'] === $pass) {
+        if($row['user_name'] == $uname && $row['password'] == $pass) {
             echo "Logged In "; 
-            echo $sql;
+            echo $sql,$row['id'];
+
             $_SESSION['user_name'] =$row['user_name'];
-            $_SESSION['name'] = $row['name']; 
+             
             $_SESSION['id'] = $row['id'];
-            //header("Location:dashboard.php");
+            header("Location:dashboard.php");
             exit();
-    
+            
         } 
         
         else{
             header("Location: index.php?error=Incorrect User Name or Password");
             exit();
         }
+    
     }
     else{
         header("Location: index.php?error=Incorrect User Name or Password");    
         exit();
     }
+
+
+
+
 
