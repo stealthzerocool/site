@@ -32,22 +32,31 @@
       //echo "<script>console.log('Debug Objects: " . $x . "' );</script>";
        
     $sql = "SELECT * FROM users WHERE user_name = '$uname' AND password ='$pass'";
-    
     $result = mysqli_query($conn, $sql);
-    
+/*     
+    while ($ross=$result->fetch_array()){
+        echo $ross['user_name']."<br>";
+    }
+    exit(); */
+
+
     //echo $sql;
     //exit();
+
 //mysqli_num_rows ($result)==1
 
     if(true){
         try {
+            //echo "!!!!!!!!";
         //$row = mysqli_fetch_assoc($result); 
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        throw new Exception('error');
+        throw new Exception("validdd");
         }
         catch (Exception $e){
-            echo "something went wrong";
+            echo "error thrown";
+            //exit();
         }
+        
         
         //throw new Exception();
         //$row = $result;
