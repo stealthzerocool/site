@@ -50,10 +50,11 @@
             //echo "!!!!!!!!";
         //$row = mysqli_fetch_assoc($result); 
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-        throw new Exception("validdd");
+        //throw new Exception("validdd");
         }
-        catch (Exception $e){
-            echo "error thrown";
+        catch (TypeError $e){
+            header("Location: index.php?error=Incorrect User Name or Password!");
+            exit();
             //exit();
         }
         
